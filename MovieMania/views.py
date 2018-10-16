@@ -29,7 +29,6 @@ def main(request):
             movie_name = form.cleaned_data['movie_name']
             response = requests.get('https://www.omdbapi.com/?t=%s&apikey=767da9db' % movie_name)
             data = response.json()
-            print(data)
             return render(request, template_name = 'display.html', context = {
                 'movie_name':data['Title'],
                 'poster':data['Poster'],
