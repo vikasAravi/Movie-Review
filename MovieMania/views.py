@@ -40,6 +40,10 @@ def main(request):
                 'votes': data['imdbVotes'],
                 'runtime': data['Runtime'],
                 'writer': data['Writer'],
+                'language': data['Language'],
+                'actors': data['Actors'],
+                'country': data['Country'],
+                'director': data['Director'],
             })
     else:
         form = MovieForm()
