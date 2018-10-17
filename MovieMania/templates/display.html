@@ -28,27 +28,60 @@
           </div>
         </nav>
     </body>
-<div class="container masthead text-center">
-    <div class="row-1"></div>
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="padding:30px 0;">
-            <div class="card card-login p-2">
-                <div class="card-body"></div>
-                        <h2>Movie Review</h2>
-                        <p>Movie Name:{{ movie_name }}</p>
-                        <img src = '{{ poster }}'>
-                        <p>Plot: {{ plot }}</p>
-                        <p>Rating: {{ imdbrating }}</p>
-                        <p>Genre: {{ genre }}</p>
-                        <p>Relased Date: {{ released }}</p>
-                        <p>Runtime: {{ runtime }}</p>
-                        <p>Writer: {{ writer }}</p>
-                        <p>Director: {{ director }}</p>
-                        <p>Actors: {{ actors }}</p>
-                        <p>Country: {{ country }}</p>
-                        <p>Language: {{ language }}</p>
+{% comment %} <div style="background-color:rgba(0,0,0);" "align='left';">
+    <h2 style="color:blue";>Movie Review</h2>
+    <div class="container masthead text-center">
+        <div class="row-1"></div>
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-login p-2">
+                    <div class="card-body"></div>
+                            <img src = '{{ poster }}'>
+                    </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </div>
+<div class="container masthead text-center">
+        <div class="row-1"></div>
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="padding:30px 0;">
+                <div class="card card-login p-2">
+                    <div class="card-body"></div>
+                            <p><h3>Movie Name:</h3>{{ movie_name }}</p>
+                            <p><h3>Plot:</h3> {{ plot }}</p>
+                            <p><h3><i>Rating:</i></h3> {{ imdbrating }}</p>
+                            <p><h4 style="color:brown";>Genre</h4> <b>{{ genre }}</b></p>
+                            <p>Relased Date: {{ released }}</p>
+                            <p>Runtime: {{ runtime }}</p>
+                            <p>Writer: {{ writer }}</p>
+                            <p>Director: {{ director }}</p>
+                            <p>Actors: {{ actors }}</p>
+                            <p>Country: {{ country }}</p>
+                            <p>Language: {{ language }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div> {% endcomment %}
+<body>
+    <div style="background-color:lightblue;">
+    <h2 style="color:black";>Movie Review</h2>
+    <div class = "movie d-flex container">
+        <img class = "poster my-auto" src = '{{ poster}}'>
+        <div class = 'container'>
+                <p><b>Rating:</b><b>{{ imdbrating }}</p>
+                <p>Genre:<b>{{ genre }}</b></p>
+                <p>Movie Name:<b>{{ movie_name }}</b></p>
+                <p>Plot:<b>{{ plot }}</b></p>
+                <p>Relased Date: <b>{{ released }}</b></p>
+                <p>Runtime:<b>{{ runtime }}</b></p>
+                <p>Writer:<b>{{ writer }}</b></p>
+                <p>Director:<b>{{ director }}</b></p>
+                <p>Actors:<b>{{ actors }}</b></p>
+                <p>Country:<b>{{ country }}</b></p>
+                <p>Language:<b>{{ language }}</b></p>
+        </div>
+    </div>
+</div>
+</body>
 </html>
