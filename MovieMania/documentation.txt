@@ -2,9 +2,9 @@ In this project users can know the details of the movie
 
  Description of the project:
      ABOUT PAGE: In this page, Users can know how to use the application(details of the application)
-     SIGNUP PAGE: In this page, Users can register to use the services by the application
+     SIGNUP PAGE: In this page, Users can register to use the services provided by the application
      LOGIN PAGE: In this page, Users Can logged into the application
-     MAIN PAGE: In this page, authenticate users can enter the names of the movies and they hyave the chance to see the reviews of the movie
+     MAIN PAGE: In this page, authenticate users can enter the names of the movies and they have the chance to see the reviews of the movie
      DISPLAY PAGE: In this page, Details of the movie will be displayed!!!
 
 
