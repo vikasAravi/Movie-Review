@@ -24,46 +24,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
               <a class="nav-item nav-link pr-2" href="{% url "logout" %}">Logout</a>
-              <a class="nav-item nav-link pr-2" href="{% url "main" %}">Search</a>
+              {% comment %} <a class="nav-item nav-link pr-2" href="{% url "main" %}">Search</a> {% endcomment %}
             </div>
           </div>
         </nav>
     </body>
-{% comment %} <div style="background-color:rgba(0,0,0);" "align='left';">
-    <h2 style="color:blue";>Movie Review</h2>
-    <div class="container masthead text-center">
-        <div class="row-1"></div>
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-login p-2">
-                    <div class="card-body"></div>
-                            <img src = '{{ poster }}'>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container masthead text-center">
-        <div class="row-1"></div>
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="padding:30px 0;">
-                <div class="card card-login p-2">
-                    <div class="card-body"></div>
-                            <p><h3>Movie Name:</h3>{{ movie_name }}</p>
-                            <p><h3>Plot:</h3> {{ plot }}</p>
-                            <p><h3><i>Rating:</i></h3> {{ imdbrating }}</p>
-                            <p><h4 style="color:brown";>Genre</h4> <b>{{ genre }}</b></p>
-                            <p>Relased Date: {{ released }}</p>
-                            <p>Runtime: {{ runtime }}</p>
-                            <p>Writer: {{ writer }}</p>
-                            <p>Director: {{ director }}</p>
-                            <p>Actors: {{ actors }}</p>
-                            <p>Country: {{ country }}</p>
-                            <p>Language: {{ language }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div> {% endcomment %}
 <body>
     <div style="background-color:lightblue;">
     <h2 style="color:black";>Movie Review</h2>
@@ -83,6 +48,11 @@
                 <p>Language:<b>{{ language }}</b></p>
         </div>
     </div>
+    <div class="card card-create-user mt-3">
+            <div class="card-body text-center">
+                Search for another Movie?
+                <a href="{% url "main" %}" class="card-link">Search</a>
+            </div>
 </div>
 </body>
 </html>

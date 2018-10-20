@@ -15,5 +15,22 @@ If the request is secure, then the API returns the JSON object back !!!!
 Python serves alot for requesting the api!
 
 Django is a good backend to store the details of the users and it is a very good python framework !!!
-   
+
+ABOUT API:
+    The OMDBdb is a RESTFUL API web service to obtain movoe information, all content and images on the site are contributed and maiantained by the users
+    User can send the request by https://www.omdbapi.com/?apikey=[yourkey]&
+    There are so many parameters to use but according tp project, Title is the main because user has the chance to enter the name of the Title
+    what I retrieve is 
+    1. imdbrating
+    2. Genre
+    3. movie_name
+    4. released_date
+    5. Runtime
+    6. Writer 
+    7. Director
+    8. Actors
+    9. Country
+    10. Language
+    11. Posters
+    12.Plot and you can retrieve other information toooo 
 (This project will be updated soon with  more features !!!!!! )    :)
