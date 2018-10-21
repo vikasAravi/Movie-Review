@@ -27,12 +27,12 @@ def main(request):
         form = MovieForm(request.POST)
         if form.is_valid():
             movie_name = form.cleaned_data['movie_name']
-            year = form.cleaned_data['year']
-            query = {'t' : movie_name,'y': year}
-            # response = requests.get('https://www.omdbapi.com/?t=%s&apikey=767da9db&y={year}' % movie_name)
-            response = requests.get('http://www.omdbapi.com/?t=%s&apikey=767da9db' % movie_name)
-            data = response.json()
-            return render(request, template_name = 'display.html', context = {
+            year = form.cleaned_data['year']  
+            apikey = '767da9db'
+            try:
+                response = requests.get('http://www.omdbapi.com/?t=' + movie_name + '&apikey=' + apikey + '&y=' + year)
+                data = response.json()
+                return render(request, template_name = 'display.html', context = {
                 'movie_name':data['Title'],
                 'year':data['Year'],
                 'poster':data['Poster'],
@@ -48,6 +48,8 @@ def main(request):
                 'country': data['Country'],
                 'director': data['Director'],
             })
+            except KeyError as ke:
+                return render(request, template_name = 'keyerror.html')
     else:
         form = MovieForm()
         return render(request,template_name = 'main.html', context = {'form': form})
