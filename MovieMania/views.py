@@ -27,11 +27,14 @@ def main(request):
         form = MovieForm(request.POST)
         if form.is_valid():
             movie_name = form.cleaned_data['movie_name']
-            response = requests.get('https://www.omdbapi.com/?t=%s&apikey=767da9db' % movie_name)
+            year = form.cleaned_data['year']
+            query = {'t' : movie_name,'y': year}
+            # response = requests.get('https://www.omdbapi.com/?t=%s&apikey=767da9db&y={year}' % movie_name)
+            response = requests.get('http://www.omdbapi.com/?t=%s&apikey=767da9db' % movie_name)
             data = response.json()
-            print(data)
             return render(request, template_name = 'display.html', context = {
                 'movie_name':data['Title'],
+                'year':data['Year'],
                 'poster':data['Poster'],
                 'plot': data['Plot'],
                 'imdbrating': data['imdbRating'],
