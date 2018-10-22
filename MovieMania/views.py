@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 # Create your views here
-from .forms import MovieForm
+from .forms import MovieForm, WishList, WatchLater
 from .forms import SignUpForm
 import requests
 
@@ -53,3 +53,12 @@ def main(request):
     else:
         form = MovieForm()
         return render(request,template_name = 'main.html', context = {'form': form})
+
+
+def watchlater(request):
+    form = WatchLater()
+    return render(request, template_name = 'watchlater.html',context = {'form': form})
+
+def wishlist(request):
+    form = WishList()
+    return render(request, template_name = 'wishlist.html', context = {'form': form})
