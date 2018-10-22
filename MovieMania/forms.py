@@ -13,3 +13,10 @@ class SignUpForm(UserCreationForm):
 class MovieForm(forms.Form):
     movie_name = forms.CharField(label = 'Enter movie name', max_length = 100)
     year = forms.CharField(label = 'Year')
+
+class WishList(forms.Form):
+    movie_name = forms.CharField(label = "Enter your movie_name", max_length = 100)
+
+class WatchLater(forms.Form):
+    movie_name = forms.CharField(label = 'Enter your movie_name', max_length = 100)
+    
