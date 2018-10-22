@@ -57,11 +57,7 @@ def main(request):
 def wishlist(request):
     if request.method == 'POST':
         form = WishList(request.POST)
-        if form.is_valid():
-            movie_name = form.cleaned_data['movie_name']
-            instance = WishList.objects.create(movie_name = movie_name)
-            instance.save()
-            return render(request, template_name = 'success.html')
+        return render(request, template_name = 'success.html')
     else:
         form = WishList()
         return render(request, template_name = 'wishlist.html', context={'form': form})
